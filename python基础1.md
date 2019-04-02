@@ -113,15 +113,15 @@ False
 {'r', 'd', 'b', 'm', 'z', 'l'}  
 
 
-将元素 x 添加到集合 s 中  
-thisset = set(("Google", "Runoob", "Taobao"))   
-thisset.add("Facebook")     //add方法  
+将元素 x 添加到集合中  
+thisset = set(("Go", "Ru", "Ta"))   
+thisset.add("Face")     //add方法  
 thisset.update({1,3})      //updata方法，参数可以是列表，元组，字典等  
 print(thisset)  
-输出{1, 3, 'Google', 'Taobao', 'Runoob'}  
+输出{1, 3, 'Ta', 'Ru', 'face', 'Go'}   
 
-thisset.remove("Taao") #将元素从集合中移除，如果元素不存在，则会发生错误  
-thisset.discard("Fack"） #还有一个方法也是移除集合中的元素，且如果元素不存在，不会发生错误  
+thisset.remove("Ta") #将元素从集合中移除，如果元素不存在，则会发生错误  
+thisset.discard("Face"） #还有一个方法也是移除集合中的元素，且如果元素不存在，不会发生错误  
 x = thisset.pop()    #设置随机删除集合中的一个元素  
 print(x)  
 
@@ -133,8 +133,8 @@ n = 100
 sum = 0   
 counter = 1   
 while counter <= n:   
-&emsp    sum = sum + counter   
-$emsp    counter += 1  
+&emsp;sum = sum + counter   
+$emsp;counter += 1  
 print("1 到 %d 之和为: %d" % (n,sum))  
 
 
