@@ -134,32 +134,32 @@ sum = 0
 counter = 1   
 while counter <= n:   
 &emsp;sum = sum + counter   
-$emsp;counter += 1  
+&emsp;counter += 1  
 print("1 到 %d 之和为: %d" % (n,sum))  
 
 
 **while 循环使用 else 语句**
 count = 0   
 while count < 5:   
-    print (count, " 小于 5")   
-    count = count + 1  
+&emsp;print (count, " 小于 5")   
+&emsp;count = count + 1  
 else:   
-    print (count, " 大于或等于 5")  
+&emsp;print (count, " 大于或等于 5")  
 
 **for**
-sites = ["Baidu", "Google","Runoob","Taobao"]  
+sites = ["B", "G","R","T"]  
 for site in sites:  
-if site == "Runoob":   
-    print("菜鸟教程!")   
-        break   
-    print("循环数据 " + site)   
+if site == "R":   
+&emsp;print("rrrrrrr!")   
+&emsp;&emsp;break   
+&emsp;print("循环数据 " + site)   
 else:   
-    print("没有循环数据!")   
+&emsp;print("没有循环数据!")   
 print("完成循环!")  
 
 
 for i in range(0, 10, 3) :   
-print(i)  
+&emsp;print(i)  
 
 输出 0 3 6 9  
 
