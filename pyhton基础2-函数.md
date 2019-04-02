@@ -51,6 +51,32 @@ def fun3():
 &emsp;return fun33()  
 fun3()  
 
+#### 闭包  
+在一个函数中定义了一个内函数，内函数里运用了外函数的临时变量，并且外函数的返回值是内函数的引用，这样就构成了一个闭包。  
+def outer(a):  
+&emsp;b = 10  
+&emsp;def inner():  
+&emsp;&emsp;print(a+b)  
+&emsp;return inner  
+if __name__=='__main__':  
+ &emsp;demo = outer(5)  
+ &emsp;demo()      //输出15  
+ &emsp;demo2 = outer(7)  
+ &emsp;demo2()  输出   17    
+
+#### lambda 表达式  
+def s(x):  
+&emsp;return 2*x+1  
+
+lambda写法  
+a = labda x:2*x+1
+a(5)   //输出  11
+
+可以多个参数
+b = labda x,y,z:x + y +z  
+prirnt(b(3,4,5))  
+
+
 
 
 
