@@ -20,11 +20,11 @@ Python2.x 里 整数除整数只能得出整数，如果要得到小数部分，
 |  按位或   有一个为1则为1<br>
 ^ 按位异或 两对应的二进位相异时，为1  
 ~ 取反     把1变0，0变1；如 ~6  
-<<         左移n位，就是乘以2的n次方；   
->>         右移n位，就是除以2的n次方  
+<<         左移n位，就是乘以2的n次方；   
+\>>        右移n位，就是除以2的n次方  
 5左移2 ： 5<<2  左移2位，就是乘以2的2次方，输出20  
 
-####列表
+#### 列表  
 list1 = [1, 2, 3, 4, 5 ];   
 list2 = ["a", "b", "c", 0，2];  
 
@@ -98,18 +98,18 @@ print(basket) # 这里演示的是去重功能
  True  
  'crabgrass' in basket  
 False   
->>> #下面展示两个集合间的运算. ...  
->>>a = set('abracadabra')   
->>>b = set('alacazam')   
->>>a   
+ #下面展示两个集合间的运算. ...  
+a = set('abracadabra')   
+b = set('alacazam')   
+a   
 {'a', 'r', 'b', 'c', 'd'}   
->>>a - b # 集合a中包含而集合b中不包含的元素  
+a - b # 集合a中包含而集合b中不包含的元素  
  {'r', 'd', 'b'}   
->>> a | b # 集合a或b中包含的所有元素  
+\>>> a | b # 集合a或b中包含的所有元素  
  {'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}  
->>> a & b # 集合a和b中都包含了的元素   
+\>>> a & b # 集合a和b中都包含了的元素   
 {'a', 'c'}   
->>> a ^ b # 不同时包含于a和b的元素  
+\>>> a ^ b # 不同时包含于a和b的元素  
 {'r', 'd', 'b', 'm', 'z', 'l'}  
 
 
@@ -149,8 +149,8 @@ else:
 **for**
 sites = ["Baidu", "Google","Runoob","Taobao"]  
 for site in sites:  
-    if site == "Runoob":   
-        print("菜鸟教程!")   
+if site == "Runoob":   
+    print("菜鸟教程!")   
         break   
     print("循环数据 " + site)   
 else:   
