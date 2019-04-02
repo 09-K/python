@@ -1,9 +1,9 @@
-###函数  
+### 函数  
 def关键字声明函数  
-def sum(num,num2):   //num,num2 为形参
+def sum(num,num2):   //num,num2 为形参  
 &emsp;result = num + num2  
 &emsp;print(result)  
-sum(22,33)  //调用函数，22，33为实参
+sum(22,33)  //调用函数，22，33为实参  
 \------------------------------------------  
 关键字参数  
 def some(name,word):  
