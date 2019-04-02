@@ -31,9 +31,9 @@ list2 = ["a", "b", "c", 0，2];
 print (list1[:3])  //输出1，2，3  
 print (list2[-4：-2])  //输出 b,c  
 
-**列表的操作**
-del list[2]            删除数据  
-list+list2             列表相加  
+**列表的操作**  
+del list[2]      删除数据  
+list+list2   列表相加  
 list.append(‘hhh’)    添加数据到列表末尾，，，如果放两个参数的话会报错  
 list.extend([‘bbbb’,’yyy’])   extend方法，括号里的要中括号  
 list.insert(1,'mm’)    下标为1的位置，插入数据  
@@ -91,19 +91,19 @@ del dict              # 删除字典
 #### 集合
 使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。  
 
-basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}   
-print(basket) # 这里演示的是去重功能   
+\>>>basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}   
+\>>>print(basket) # 这里演示的是去重功能   
 {'orange', 'banana', 'pear', 'apple'}   
- 'orange' in basket # 快速判断元素是否在集合内  
+\>>> 'orange' in basket # 快速判断元素是否在集合内  
  True  
- 'crabgrass' in basket  
+ \>>>'crabgrass' in basket  
 False   
  #下面展示两个集合间的运算. ...  
-a = set('abracadabra')   
-b = set('alacazam')   
-a   
+\>>>a = set('abracadabra')   
+\>>>b = set('alacazam')   
+\>>>a   
 {'a', 'r', 'b', 'c', 'd'}   
-a - b # 集合a中包含而集合b中不包含的元素  
+\>>>a - b # 集合a中包含而集合b中不包含的元素  
  {'r', 'd', 'b'}   
 \>>> a | b # 集合a或b中包含的所有元素  
  {'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}  
@@ -133,8 +133,8 @@ n = 100
 sum = 0   
 counter = 1   
 while counter <= n:   
-    sum = sum + counter   
-    counter += 1  
+&emsp    sum = sum + counter   
+$emsp    counter += 1  
 print("1 到 %d 之和为: %d" % (n,sum))  
 
 
