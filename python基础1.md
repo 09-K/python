@@ -178,7 +178,9 @@ abcdefgkkk
 dir(str)  //列出所有方法  
 str.capitalize() //把首字符变大写  
 str.casefald()  //把整个字符串变为小写  
-str.lower()  //所有大写转换为小写 
+str.lower()  //所有大写转换为小写  
+str.upper()  //所有小写转换为大写  
+str.swapcase()  //大小写翻转  
 str.lstrip()  //去掉字符串左边的所有空格  
 str.srip([char])  //删除前边和后边的空格，中间的空格不删，char参数可以定制删除的字符,如为 s  则把s 删掉。  
 str.center(width) //把字符串居中，width为填充的空格数  
@@ -191,7 +193,9 @@ str.rfind() //与fing()一样，不过是从右边开始查找
 str.islower() //如果字符串中至少包含一个区分大小写的字符，并且这些字符都是小写，则返回True,否则False  
 str.isnumeric()  //如果字符串中只包含数字字符，则True,否则Flase  
 str.istitle()  //字符串都是以大写开始，其余字母均小写，则True,否则Flase  
+str.title()  //返回标题化：所有单词都是以大写开始，其余字母小写  
 str.replace(old,new[,count])  //old子字符换为new子字符串，如果count指定，则替换不超过count次  
+
 str.join(sub)  //以字符串作为分割符，插入到sub中所有的字符之间  
 \>>> str  
 'abcdefg'  
@@ -210,11 +214,19 @@ str.partition(sub)  //找到字符串sub,把字符串分成一个3元组(pre_sub
 \>>>str.partition('sub')  
 ('', 'a', 'bcdefg')  
 
+str.translate(str.maketrans('c','b'))  //把 c 都换成 b  
+\>>> str.maketrans('c','b')   //返回ASCII码  
+{99: 98}  
 
+\>>> "{0} love {1}.{2}".format("i","fishc","com")  
+'i love fishc.com'  
+\>>> "{a} love {b}.{c}".format(a="i",b="fishc",c="com")  
+'i love fishc.com'  
 
-
-
-
+\>>> '%c %c %c' % (97,98,99)  
+'a b c'  
+\>>> '%d + %d = %d' % (11,2,11+2)  
+'11 + 2 = 13'  
 
 
 
