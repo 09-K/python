@@ -77,12 +77,33 @@ b = labda x,y,z:x + y +z
 prirnt(b(3,4,5))  
 
 
+#### 递归  
+递归就是函数调用自身的这么一个行为  
+
+非递归求阶乘  
+def jiecheng():  
+&emsp;result =n  
+&emsp;for i in range(1,n):  
+&emsp;&emsp;result *=i  
+&emsp;return result  
+
+num = int(input('输入'))  
+result = jiecheng(num)  
+print("%d 的阶乘是:%d" % (num,result))  
 
 
+递归求 :   
+def factorial(n):  
+&emsp;if n ==1:  
+&emsp;return 1  
+&emsp;else:  
+&emsp;&emsp;return n * factorial(n-1)  
 
+num = int(input('输入'))  
+result = jiecheng(num)  
+print("%d 的阶乘是:%d" % (num,result)) 
 
-
-
+符合两个条件：1，有调用函数自身的行为；2，有一个正确的返回条件。  
 
 
 
