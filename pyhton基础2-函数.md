@@ -78,6 +78,7 @@ prirnt(b(3,4,5))
 
 
 #### 递归  
+在函数内部，可以调用其他函数。如果一个函数在内部调用自身本身，这个函数就是递归函数  
 递归就是函数调用自身的这么一个行为  
 
 非递归求阶乘  
@@ -105,11 +106,37 @@ print("%d 的阶乘是:%d" % (num,result))
 
 符合两个条件：1，有调用函数自身的行为；2，有一个正确的返回条件。  
 
+斐波那契  
+def fab(n):  
+&emsp;n1=1  
+&emsp;n2=1  
+&emsp;n3=1  
+&emsp;if n<1:  
+&emsp;&emsp;print(‘输入有误‘)  
+&emsp;&emsp;return -1  
+&emsp;while (n-2)>0:  
+&emsp;&emsp;n3 = n2 + n1  
+&emsp;&emsp;n1 = n2  
+&emsp;&emsp;n2 = n3  
+&emsp;&emsp;n -= 1  
+&emsp;eturn n3  
 
+result = fab(20)  
+if result != -1:  
+&emsp;print(‘共有%d对兔子诞生‘ % result)  
 
-
-
-
+用递归  
+def fab(n):  
+&emsp;if n<1:  
+&emsp;&emsp;print("输入有误")  
+&emsp;&emsp;return -1  
+&emsp;if n == 1 or n == 2:  
+&emsp;&emsp;return 1  
+&emsp;else:  
+&emsp;&emsp;return fab(n-1) + fab(n-2)  
+result = fab(20)  
+if result !=1:  
+&emsp;print("共有%d对兔子诞生" % result)  
 
 
 
