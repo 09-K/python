@@ -9,10 +9,10 @@ import urllib.error
 
 url='https://github.com/'  
 for i in range(100,1000):  
-req = urllib.request.Request(url+str(i))  
-try:  
-&emsp;response = urllib.request.urlopen(req)  
-&emsp;x = response.getcode()  
-&emsp;print(i)  
-except:  
-&emsp;print(str(i)+':404')
+&emsp;req = urllib.request.Request(url+str(i))  
+&emsp;try:  
+&emsp;&emsp;response = urllib.request.urlopen(req)  
+&emsp;&emsp;x = response.getcode()  
+&emsp;&emsp;print(i)  
+&emsp;except:  
+&emsp;&emsp;print(str(i)+':404')
