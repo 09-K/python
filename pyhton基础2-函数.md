@@ -138,6 +138,37 @@ result = fab(20)
 if result !=1:  
 &emsp;print("共有%d对兔子诞生" % result)  
 
+#### 文件  
+r 以只读方式打开(默认)  
+w 以写入的方式打开，会覆盖已存在的文件  
+x 如果文件已经存在，此模式打开会将引发异常  
+a 以写入模式打开，若文件存在，则在末尾追加写入  
+b 以二进制模式打开  
+t 以文本模式打开  
++ 可读可写模式  
+U 通用换行符支持  
+
+f.close() 关闭文件  
+f.read(size=-1) 从文件读取size个字符，为给定size或给定负值时，读取剩余的所有字符，然后作为字符串返回  
+f.readline() 以写入模式打开，若文件存在，则在末尾追加  
+f.write(str) 将字符串str写入文件  
+f.writeline(seq) 向文件写入字符串序列seq,seq应该是一个返回字符串的可迭代对象  
+f.tell() 返回当前文件中的位置   
+
+f= open('a.txt')  
+f.read(9)   //读出前9个字符  
+f.readline()  //读取一行  
+list(f)   //转化为列表了  
+
+for i in f:  
+&emsp;print(i)  
+
+写入文件  
+f = open('test.txt','w')  
+f.write('abcdefghijkl')  
+
+
+
 
 
 
