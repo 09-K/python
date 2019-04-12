@@ -87,16 +87,40 @@ del dict              # 删除字典
 
 不允许同一个键出现两次。创建时如果同一个键被赋值两次，后一个值会被记住  
 
+\>>> dict = dict.fromkeys(range(10),'a')  
+\>>> dict  
+{0: 'a', 1: 'a', 2: 'a', 3: 'a', 4: 'a', 5: 'a', 6: 'a', 7: 'a', 8: 'a', 9: 'a'}  
+
+keys()方法  
+\>>> for i in dict.keys():  
+print(i)  //打印所有的键  
+valus()方法同理  
+for i in dict.valus():  
+
+items()方法 打印所有项  
+for i in dict.items():  
+
+get()方法  ，当访问项不存在，友好显示  
+\>>> dict.get(99,'no')  
+'no'
+
+!>>> dict.pop(2)   //给定键，删掉对应的值
+'a'  
+\>>> dict.popitem()   //随机的删掉
+(0, 'a')
+\>>>dict.setdefault('aaa')  //当找不到键的时候，会添加进去
+
+
 
 #### 集合
 使用大括号 { } 或者 set() 函数创建集合，注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。  
 
-\>>>basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}   
-\>>>print(basket) # 这里演示的是去重功能   
-{'orange', 'banana', 'pear', 'apple'}   
-\>>> 'orange' in basket # 快速判断元素是否在集合内  
+\>>>num = {1,2,3,4,5,6,4,5,6,2,9}   
+\>>>print(nmu)&emsp    //集合自带去重功能   
+{1, 2, 3, 4, 5, 6, 9}  
+\>>> '4' in num # 快速判断元素是否在集合内  
  True  
- \>>>'crabgrass' in basket  
+\>>>'44' in basket  
 False   
  #下面展示两个集合间的运算. ...  
 \>>>a = set('abracadabra')   
@@ -127,6 +151,9 @@ print(x)
 
 len(thisset)  #计算集合元素个数。  
 thisset.clear() #清空集合  
+
+set2= frozenset([1,2,3,4,5,6])   //不可变集合：frozenset方法
+
 
 #### 循环
 n = 100   
