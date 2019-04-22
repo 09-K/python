@@ -46,9 +46,10 @@ for i in "abcdefg":
 ```
 字符串是一个容器，同时也是一个迭代器,for语句的作用就是触发这个迭代器的迭代功能，每次从容器里边拿出一个数据，就是所谓的迭代操作。    
 
-迭代操作，python提供了两个内置函数(BIF): iter()  ,   next()
-![](https://github.com/19969/python/blob/master/img/diedai.PNG)
+迭代操作，python提供了两个内置函数(BIF): iter()  , next()  
+![](https://github.com/19969/python/blob/master/img/diedai.PNG)  
 it 就是一个迭代器了，获得这个字符串容器的迭代器  
+
 
 for语句，其实它是这么工作的
 ```
