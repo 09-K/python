@@ -1,0 +1,33 @@
+
+
+常见匹配模式  
+![](https://github.com/19969/python/blob/master/img/a.png)  
+
+
+#### re模块常用方法  
+re.match()
+re.search()
+re.sub()
+re.compile()
+re.findall()
+re.finditer()
+
+### re.match
+从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的化，返回none
+语法：re.match(pattern,string,flags=0)  pattern 匹配的正则表达式，flags 控制表达式的匹配方式 如是否区分大小写 多行匹配等  
+
+例  
+impot re  
+print(re.match('www','ww.ww'))   //返回mone  
+print(re.match('www','www.aa').group(0))   //输出www      0可以省略掉  
+print(re.match('www','www.aa').start())    //输出 0   也就是起始位置  
+print(re.match('www','www.aa').end())      //输出3     结束位置  
+print(re.match('www','www.aa').span())     //输出（3,5）  
+
+
+
+
+
+
+
+
