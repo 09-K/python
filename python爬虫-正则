@@ -17,12 +17,127 @@ re.finditer()
 语法：re.match(pattern,string,flags=0)  pattern 匹配的正则表达式，flags 控制表达式的匹配方式 如是否区分大小写 多行匹配等  
 
 例  
+'''
 impot re  
 print(re.match('www','ww.ww'))   //返回mone  
 print(re.match('www','www.aa').group(0))   //输出www      0可以省略掉  
 print(re.match('www','www.aa').start())    //输出 0   也就是起始位置  
-print(re.match('www','www.aa').end())      //输出3     结束位置  
-print(re.match('www','www.aa').span())     //输出（3,5）  
+print(re.match('www','www.aa').end())      //输出 3     结束位置  
+print(re.match('www','www.aa').span())     //输出（3,5）  相当于start加end  
+print(re.match('www','wwwwwww.aa').group(0))   //还是输出  www  
+'''
+### re.search  
+扫描整个字符串并返回第一个成功的匹配  
+语法：re.search(patter,string,flags=0)  flags 控制表达式的匹配方式 如是否区分大小写 多行匹配等   
+
+例  
+'''
+import re  
+print(re.search('www','www.baidu').group())   //输出  www  
+print(re.search('www','aaaawww.baidu').group())  // www  
+'''
+re.match与re.search的区别：re.match至匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败；而re.search匹配整个字符串，直到找到一个匹配。  
+
+
+### re.sub  
+检索和替换字符串中的匹配项  
+re.sub(pattern,repl,string,count=0,flags=0)  repl:替换的字符串，也可为一个函数；count:模式匹配后替换的最大次数，默认0表示替换所有匹配  
+
+例  
+'''
+import re  
+num = '123-45-6 # 这是数字'  
+num1 = re.sub(r'#.*$',"",num)  匹配#号后面所有置空  
+print(num1)  输出123-45-6  
+num2 = re.sub(r'\D',"",num)  匹配所有非数字然后置空  
+print(num2)  //输出 123456  
+'''
+
+### re.compile  
+用于编译正则表达式，生成一个正则表达式对象，供match()和search()两个函数使用  
+语法：re.compile(pattern[,flags])  
+flags可选，表示匹配模式，有哪些呢：  
+'''
+  1 re.I 忽略大小写  
+  2 re.L 表示特殊字符集\w,\W,\b,\B,\s,\S 依赖当前环境  
+  3 re.M 多行模式  
+  4 re.S 即 为.并且包括换行符在内的任意字符  
+  5 re.U 表示特殊字符集\w,\W,\b,\B,\s,\S 依赖于unicode 字符属性数据库  
+  6 re.X 为了增加可读性，忽略空格和#后面的注释  
+'''
+
+例  
+'''
+import re  
+pattern = re.compile(r'\d+')  //用于匹配至少一个数字  
+m = pattern.match('one12teothree34')
+print(m)   //输出 None  因为match从头部开始匹配
+
+m = pattern.match('one12teothree34'，3，10)  //从'1'的位置开始匹配
+print(m)
+'''
+例  
+'''
+import re  
+pattern = re.compile(r'([a-z]+) ([a-z]+)', re.I)  //re.I 表示忽略大小写  
+m = pattern.match('HelIo World Wide Web')  
+print(m.group(0))    //输出 HelIo World  
+print(m.group(1))    //输出 HelIo  
+print(m.groups())   //输出 ('Hello', 'World')  
+'''
+
+### re.findall  
+在字符串中找到正则表达式所匹配的所有字串，并返回一个列表，如果没有找到，返回空列表  
+match和search是匹配一次，即匹配到就停止；findall匹配到了还继续  
+语法：  findall(string[,pos[,endpos]]) pos指定字符串的起始位置，默认0；
+
+例  
+'''
+import re  
+pattern =re.compile(r'\d+') //查找数字  
+result1 = pattern.findall('xdf123cgv456')  
+result2 = pattern.findall('xdf123cgv456',0,10) 
+print(result1)  //输出  ['123', '456'] 
+print(result2)  //输出 ['123', '4']
+'''
+
+### re.finditer  
+和findall类似，在字符串中找到正则表达式所匹配的所有字串，并把他们作为一个迭代返回  
+'''
+import re  
+i = re.finditer(r'\d+','321ghb3u7')
+for match in i:
+  print(match.group())
+'''
+
+### re.split  
+按照能够匹配的字串将字符串分割后返回列表，  
+语法 ： re.split(pattern,string[,maxsplit=0,flags=0])  maxsplit:分割次数，maxsplit=1分割一次，默认为0，不限制次数  
+例  
+'''
+import re
+a = re.split('\W','www.baidu.com')   //用非字母来分割
+print(a)  //['www', 'baidu', 'com']  
+
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
