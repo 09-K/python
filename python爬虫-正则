@@ -11,6 +11,7 @@ re.sub()
 re.compile()
 re.findall()
 re.finditer()
+re.split()
 
 ### re.match
 从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的化，返回none
@@ -117,12 +118,23 @@ for match in i:
 ```
 import re
 a = re.split('\W','www.baidu.com')   //用非字母来分割
-print(a)  //['www', 'baidu', 'com']  
+print(a)  //输出  ['www', 'baidu', 'com']
+
+b = re.split('a','www.baidu.com')  //用a分割
+print(b)   // 输出  ['www.b', 'idu.com']
 
 ```
+### 正则实例  
 
+import re  
+pattern="[\u4e00-\u9fa5]+"  //匹配中文  
+regex = re.compile(pattern)  
+results = regex.findall("adf中文adf京东方")  
+print(results)  //输出 ['中文','京东方']  
 
-
+str = "hello,world!!%[545]你好234世界。。。"  
+str = re.sub("[A-Za-z0-9\!\%\[\]\,\。]", "", str)   //过滤 中文以外的字符  
+print(str)    //输出 你好世界  
 
 
 
