@@ -124,7 +124,7 @@ b = re.split('a','www.baidu.com')  //用a分割
 print(b)   // 输出  ['www.b', 'idu.com']
 
 ```
-### 正则实例  
+## 正则实例  
 
 import re  
 pattern="[\u4e00-\u9fa5]+"  //匹配中文  
@@ -137,24 +137,33 @@ str = re.sub("[A-Za-z0-9\!\%\[\]\,\。]", "", str)   //过滤 中文以外的字
 print(str)    //输出 你好世界  
 
 
+re.search(r'[a-z]','34hjha')  //匹配a到z的字母，只匹配一次，，匹配到 h  
+re.search(r'ab{3}','abbbbaa')  //匹配b 3次，输出 abbb
+re.search(r'ab{3}a','abbbbbaa')  //这样匹配不了
+re.search(r'ab{3,33}a','abbbbbaa')  //3-33次，，输出 abbbbba
+
+### 匹配IP  
+re.search(r'(([01]{0,1}\d{0,1}\d|2[0-4]\d|25[0-5])\.){3}([01]{0,1}\d{0,1}\d|2[0-4]\d|25[0-5])','192.168.1.1')
+//[01]{0,1}\d{0,1}\d  匹配ip的第一部分，第一个数匹配0次或一次，  
+//[01]{0,1}\d{0,1}\d |  2[0-4]\d |  25[0-5]    //  3个 |  只有一个成立  
+//(([01]{0,1}\d{0,1}\d|2[0-4]\d|25[0-5])\.){3}  这部分重复3次  
 
 
+re.search(r'(hello)\1','hellohello')  //反斜杠后面跟数字  
+re.search(r'(hello)\141','hellohelloa')   //反斜杠后面跟三位数，表示八进制，匹配helloa  
 
+re.findall(r'[^a-z]','FinshC.com\n')   //匹配 除了a-z以外的所有
+re.findall(r'[a-z^]','FinshC.con\n')   //^放后面表示匹配脱字符本身
 
+### 贪婪和非贪婪  
+正则默认是启用了贪婪的模式  
+贪婪就是贪心，只要在符合的条件下尽可能多的去匹配  
 
+s = '<html><title>hello world</title></html>'  
+re.search(r'<.*>',s)   //贪婪模式；点号匹配除换行以外的字符，星号重复多次；匹配所有  
+re.search(f'<.*?>',s)  //非贪婪，问号匹配0次或1次，匹配到<htnl>就停下来了  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+re.findall(r'\bhello\b','hello.com!hello_com!(hello)')  //\b匹配单词边界，下横线不认为是单词边界，只匹配第一个和第三个hello  
+\B匹配非单词边界   // py\B，会匹配python、py2,不会匹配py!、py.、py空格  等
+\s 匹配空白字符 包括\t\n\r\f\v
 
